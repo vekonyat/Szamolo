@@ -46,12 +46,12 @@ header('Content-Type: text/html; charset=BOM');
                         break;
                     case "kivon":
                         $eredmény = $szam1 - $szam2;
-                        echo "<h2>$eredmény:</h2>";
+                        echo "<h2>Eredmény:</h2>";
                         echo "<p>$szam1 - $szam2 = $eredmény</p>";
                         break;
                     case "szoroz":
                         $eredmény = $szam1 * $szam2;
-                        echo "<h2>Result:</h2>";
+                        echo "<h2>Eredmény:</h2>";
                         echo "<p>$szam1 * $szam2 = $eredmény</p>";
                         break;
                     case "oszt":
@@ -59,7 +59,7 @@ header('Content-Type: text/html; charset=BOM');
                             echo "Nullával nem tudok osztani.";
                         } else {
                             $eredmény = $szam1 / $szam2;
-                            echo "<h2>Result:</h2>";
+                            echo "<h2>Eredmény:</h2>";
                             echo "<p>$szam1 / $szam2 = $eredmény</p>";
                         }
                         break;
