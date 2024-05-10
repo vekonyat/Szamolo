@@ -3,29 +3,37 @@ header('Content-Type: text/html; charset=BOM');
 ?>
 
 <!DOCTYPE html>
-<html lang="hu">
+<html>
     <head>
-        <meta charset="BOM">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Számológép</title>
     </head>
     <body>
         <h2>Egyszerû számológép</h2>
         <form action="" method="post">
             <label for="szam1">1. szám:</label>
-            <input type="text" id="szam1" name="szam1" required pattern="-?[0-9]+(\.[0-9]+)?"><br><br>
+            <input type="text" id="szam1" name="szam1" required pattern="-?[0-9]+(\.[0-9]+)?" 
+                   value="<?php echo isset($_POST['szam1']) ? $_POST['szam1'] : ''; ?>"<br><br><br>
 
             <label for="szam2">2. szám:</label>
-            <input type="text" id="szam2" name="szam2" required pattern="-?[0-9]+(\.[0-9]+)?"><br><br>
+            <input type="text" id="szam2" name="szam2" required pattern="-?[0-9]+(\.[0-9]+)?" 
+                   value="<?php echo isset($_POST['szam2']) ? $_POST['szam2'] : ''; ?>"<br><br><br>
 
             <label for="muvelet">Mûvelet:</label>
             <select id="muvelet" name="muvelet">
-                <option value="osszead">Összeadás</option>
-                <option value="kivon">Kivonás</option>
-                <option value="szoroz">Szorzás</option>
-                <option value="oszt">Osztás</option>
+                <option value="osszead" 
+                <?php echo isset($_POST['muvelet']) && $_POST['muvelet'] == 'osszead' ? 'selected' : ''; ?>
+                        >Összeadás</option>
+                <option value="kivon" 
+                <?php echo isset($_POST['muvelet']) && $_POST['muvelet'] == 'kivon' ? 'selected' : ''; ?>
+                        >Kivonás</option>
+                <option value="szoroz" 
+                <?php echo isset($_POST['muvelet']) && $_POST['muvelet'] == 'szoroz' ? 'selected' : ''; ?>
+                        >Szorzás</option>
+                <option value="oszt" 
+                <?php echo isset($_POST['muvelet']) && $_POST['muvelet'] == 'oszt' ? 'selected' : ''; ?>
+                        >Osztás</option>
             </select><br><br>
-            
+
             <button type="submit" name="szamol">Számol</button>
         </form>
 
